@@ -29,6 +29,8 @@ Route::group(['prefix'=>'users/{id}'],function(){
 });
 
 
+Route::resource('rest','RestappController',['onry'=>['index','show','create','store','destroy']]);
+
 
 Route::group(['middleware'=>'auth'],function(){
     Route::put('users','UsersController@rename')->name('rename');
